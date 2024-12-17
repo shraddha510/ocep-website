@@ -6,6 +6,7 @@
     <meta name="" viewport" content="width=device-width, initial-scale=1">
     <title>Orange County Eye Project</title>
     <link rel="stylesheet" href="style.css">
+    <script src="slideshow.js" defer></script>
 </head>
 
 <body>
@@ -23,12 +24,18 @@
         </nav>
     </header>
     <main>
-        <!-- Placeholder for rotating images -->
+        <!-- Rotating images -->
         <section id="slideshow">
-            <img src="images/image1.png" alt="Placeholder">
-            <img src="images/image2.jpg" alt="Placeholder">
-            <img src="images/image3.jpg" alt="Placeholder">
-            <img src="images/image4.jpg" alt="Placeholder">
+            <div class="slideshow-container">
+                <img src="images/image1.png" alt="Placeholder" class="slide active">
+                <img src="images/image2.jpg" alt="Placeholder" class="slide">
+                <img src="images/image3.jpg" alt="Placeholder" class="slide">
+                <img src="images/image4.jpg" alt="Placeholder" class="slide">
+
+                <!-- Navigation arrows -->
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
         </section>
 
         <!-- Statistics Section -->
