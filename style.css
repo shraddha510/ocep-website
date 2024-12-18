@@ -1,5 +1,6 @@
 body {
-    background-color: #FFE4C4;
+    font-family: "Courier New", Courier, monospace;
+
 }
 
 #slideshow img {
@@ -8,13 +9,11 @@ body {
     object-fit: cover;
 }
 
-
 .slideshow-container {
     position: relative;
     max-width: 400px;
     margin: auto;
 }
-
 
 .slide {
     display: none;
@@ -23,12 +22,10 @@ body {
     object-fit: cover;
 }
 
-
 .active {
     display: block;
 }
 
-/* Add to your existing slideshow styles */
 .prev,
 .next {
     cursor: pointer;
@@ -54,4 +51,56 @@ body {
 .prev:hover,
 .next:hover {
     background: rgba(0, 0, 0, 0.8);
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px 4px;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 16px;
+    border: 2px dotted #000;
+    border-radius: 0;
+    background-color: white;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #F9B466;
+    position: relative;
+    padding-top: 60px;
+    padding-left: 6px;
+}
+
+.top-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.top-buttons button {
+    padding: 8px 16px;
+    border: 2px dotted #000;
+    border-radius: 0;
+    background-color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Courier New", Courier, monospace;
+
+}
+
+.top-buttons button:hover {
+    background-color: #f0f0f0;
 }
