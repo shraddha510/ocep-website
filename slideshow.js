@@ -2,6 +2,20 @@ let currentSlide = 0;
 const slides = document.getElementsByClassName("slide");
 let slideInterval;
 
+
+async function checkAuth() {
+    try {
+        const response = await fetch('/api/check-auth');
+        const data = await response.json();
+        if (!data.authenticated) {
+            window.location.href = '/login.html';
+        }
+    } catch (error) {
+        console.error('Auth check failed:', error);
+    }
+}
+
+
 function showSlides() {
     // Hide all slides
     for (let i = 0; i < slides.length; i++) {
@@ -50,7 +64,7 @@ function changeSlide(direction) {
     slideInterval = setTimeout(showSlides, 3000);
 }
 
-// Start slideshow when page loads
 window.onload = function () {
-    showSlides();
+    checkAuth(); // Add this line
+    showSlides(); // Your existing code
 }

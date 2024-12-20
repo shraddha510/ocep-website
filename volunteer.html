@@ -1,12 +1,12 @@
+<!-- volunteer.html -->
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <meta name="" viewport" content="width=device-width, initial-scale=1">
-    <title>Orange County Eye Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Volunteer - Orange County Eye Project</title>
     <link rel="stylesheet" href="style.css">
-    <script src="slideshow.js" defer></script>
 </head>
 
 <body>
@@ -31,6 +31,86 @@
             <a href="contact.html">Contact</a>
         </nav>
     </header>
+
+    <main class="page-container">
+        <section class="volunteer-intro">
+            <h1>Volunteer With Us</h1>
+            <p>Join our team of dedicated volunteers making a difference in eye care across Orange County.</p>
+        </section>
+
+        <section class="volunteer-options">
+            <div class="option-card">
+                <h3>Medical Professionals</h3>
+                <ul>
+                    <li>Ophthalmologists</li>
+                    <li>Optometrists</li>
+                    <li>Nurses</li>
+                    <li>Medical Assistants</li>
+                </ul>
+            </div>
+
+            <div class="option-card">
+                <h3>Non-Medical Volunteers</h3>
+                <ul>
+                    <li>Administrative Support</li>
+                    <li>Patient Coordination</li>
+                    <li>Translation Services</li>
+                    <li>Community Outreach</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="volunteer-form-section">
+            <h2>Volunteer Application Form</h2>
+            <form id="volunteerForm" class="form-container">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="volunteerType">Volunteer Type *</label>
+                    <select id="volunteerType" required>
+                        <option value="">Select volunteer type</option>
+                        <option value="medical">Medical Professional</option>
+                        <option value="nonmedical">Non-Medical Volunteer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="availability">Availability *</label>
+                    <select id="availability" required>
+                        <option value="">Select availability</option>
+                        <option value="weekdays">Weekdays</option>
+                        <option value="weekends">Weekends</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Relevant Experience</label>
+                    <textarea id="experience" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="languages">Languages Spoken</label>
+                    <input type="text" id="languages" placeholder="e.g., English, Spanish, Vietnamese">
+                </div>
+
+                <button type="submit" class="submit-button">Submit Application</button>
+            </form>
+        </section>
+    </main>
 </body>
 
 </html>

@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="" viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Orange County Eye Project</title>
     <link rel="stylesheet" href="style.css">
     <script src="slideshow.js" defer></script>
+    <script src="volunteerSlideshow.js" defer></script>
 </head>
 
 <body>
@@ -31,50 +32,124 @@
             <a href="contact.html">Contact</a>
         </nav>
     </header>
-    <main>
-        <!-- Rotating images -->
-        <section id="slideshow">
-            <div class="slideshow-container">
-                <img src="images/image1.png" alt="Placeholder" class="slide active">
-                <img src="images/image2.jpg" alt="Placeholder" class="slide">
-                <img src="images/image3.jpg" alt="Placeholder" class="slide">
-                <img src="images/image4.jpg" alt="Placeholder" class="slide">
 
-                <!-- Navigation arrows -->
+    <main class="page-container">
+        <!-- Hero Slideshow Section -->
+        <section id="hero-slideshow" class="hero-section">
+            <div class="slideshow-container">
+                <img src="images/image1.png" alt="Eye care services" class="slide active">
+                <img src="images/image2.jpg" alt="Community outreach" class="slide">
+                <img src="images/image3.jpg" alt="Medical professionals" class="slide">
+                <img src="images/image4.jpg" alt="Patient care" class="slide">
                 <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
                 <button class="next" onclick="changeSlide(1)">&#10095;</button>
             </div>
         </section>
 
-        <!-- Statistics Section -->
-        <section id="statistics">
-            <h3>Our Impact</h3>
-            <p>Patients treated: [number]</p>
-            <p>Total volunteers: [number]</p>
+        <!-- Mission Statement -->
+        <section class="mission-section">
+            <div class="mission-card">
+                <h2>Our Mission</h2>
+                <p>Providing accessible eye care services to underserved communities in Orange County through volunteer
+                    medical professionals and community support.</p>
+            </div>
         </section>
 
-        <!-- Top Volunteers Section -->
-        <section id="top-volunteers">
-            <h3>Our Dedicated Volunteers</h3>
-            <p>[Top volunteer pictures will go here]</p>
+        <!-- Impact Statistics -->
+        <section id="statistics" class="impact-section">
+            <h2>Our Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Patients Treated</h3>
+                    <p class="stat-number">5,000+</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Volunteer Hours</h3>
+                    <p class="stat-number">10,000+</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Community Events</h3>
+                    <p class="stat-number">100+</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Years of Service</h3>
+                    <p class="stat-number">10+</p>
+                </div>
+            </div>
         </section>
 
-        <!-- News Section -->
-        <section id="news-preview">
-            <h3>Latest News</h3>
-            <p>[News snippets will go here]</p>
+        <!-- Featured Volunteers -->
+        <section id="top-volunteers" class="volunteers-section">
+            <h2>Our Dedicated Volunteers</h2>
+            <div class="volunteer-slideshow-container">
+                <div class="volunteer-slide active">
+                    <img src="images/volunteer1.jpg" alt="Dr. Sarah Johnson">
+                    <div class="volunteer-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p>Ophthalmologist - 5 years of service</p>
+                    </div>
+                </div>
+                <div class="volunteer-slide">
+                    <img src="images/volunteer2.jpg" alt="Dr. Michael Chen">
+                    <div class="volunteer-info">
+                        <h3>Dr. Michael Chen</h3>
+                        <p>Optometrist - 3 years of service</p>
+                    </div>
+                </div>
+                <div class="volunteer-slide">
+                    <img src="images/volunteer3.jpg" alt="Emily Rodriguez">
+                    <div class="volunteer-info">
+                        <h3>Emily Rodriguez</h3>
+                        <p>Clinic Coordinator - 4 years of service</p>
+                    </div>
+                </div>
+                <button class="volunteer-prev" onclick="changeVolunteerSlide(-1)">&#10094;</button>
+                <button class="volunteer-next" onclick="changeVolunteerSlide(1)">&#10095;</button>
+            </div>
         </section>
 
-        <!-- Social Media Feed -->
-        <section id="social-media">
-            <h3>Social Media</h3>
-            <p>[Social media feed will go here]</p>
+        <!-- Latest News Preview -->
+        <section id="news-preview" class="news-section">
+            <h2>Latest News</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="images/placeholder.jpg" alt="News 1">
+                    <h3>Community Outreach Success</h3>
+                    <p>Recent eye screening event serves over 100 community members...</p>
+                    <a href="news.html" class="read-more">Read More</a>
+                </div>
+                <div class="news-card">
+                    <img src="images/placeholder.jpg" alt="News 2">
+                    <h3>New Equipment Donation</h3>
+                    <p>Local business donates state-of-the-art equipment to our clinic...</p>
+                    <a href="news.html" class="read-more">Read More</a>
+                </div>
+            </div>
+            <div class="view-all-news">
+                <a href="news.html" class="primary-button">View All News</a>
+            </div>
         </section>
-        <h3>extra</h3>
-        <p>Example paragraph
-        </p>
-        <p>Example paragraph
-        </p>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="cta-grid">
+                <div class="cta-card">
+                    <h3>Need Eye Care?</h3>
+                    <p>Schedule an appointment at our clinic</p>
+                    <a href="clinic.html" class="primary-button">Book Appointment</a>
+                </div>
+                <div class="cta-card">
+                    <h3>Want to Help?</h3>
+                    <p>Join our team of volunteers</p>
+                    <a href="volunteer.html" class="primary-button">Volunteer Now</a>
+                </div>
+                <div class="cta-card">
+                    <h3>Support Our Mission</h3>
+                    <p>Make a donation to support our work</p>
+                    <a href="support.html" class="primary-button">Donate</a>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 

@@ -1,0 +1,182 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login - Orange County Eye Project</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .auth-container {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 2px dotted #000;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .auth-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #F9B466;
+            border: 2px dotted #000;
+            cursor: pointer;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .auth-button:hover {
+            background-color: #f0a355;
+        }
+
+        .toggle-form {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container">
+        <form id="loginForm" style="display: block;">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <button type="submit" class="auth-button">Login</button>
+            <div class="toggle-form">
+                <a href="#" onclick="toggleForms()">Need an account? Register</a>
+            </div>
+        </form>
+
+        <form id="registerForm" style="display: none;">
+            <h2>Register</h2>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="registerEmail">Email</label>
+                <input type="email" id="registerEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="registerPassword">Password</label>
+                <input type="password" id="registerPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select id="role" required>
+                    <option value="patient">Patient</option>
+                    <option value="volunteer">Volunteer</option>
+                </select>
+            </div>
+            <button type="submit" class="auth-button">Register</button>
+            <div class="toggle-form">
+                <a href="#" onclick="toggleForms()">Already have an account? Login</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function toggleForms() {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+            }
+        }
+
+        // Handle login
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Redirect to home page or dashboard
+                    window.location.href = '/';
+                } else {
+                    alert(data.message);
+                }
+            } catch (error) {
+                alert('An error occurred. Please try again.');
+            }
+        });
+
+        // Handle registration
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const userData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('registerEmail').value,
+                password: document.getElementById('registerPassword').value,
+                role: document.getElementById('role').value
+            };
+
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(userData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Registration successful! Please login.');
+                    toggleForms();
+                } else {
+                    alert(data.message);
+                }
+            } catch (error) {
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
+</body>
+
+</html>

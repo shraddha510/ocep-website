@@ -104,3 +104,684 @@ header {
 .top-buttons button:hover {
     background-color: #f0f0f0;
 }
+
+/* volunteer slideshow */
+
+.volunteer-slideshow-container {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 2px dotted #000;
+    padding: 20px;
+}
+
+.volunteer-slide {
+    display: none;
+    text-align: center;
+}
+
+.volunteer-slide.active {
+    display: block;
+}
+
+.volunteer-slide img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px dotted #F9B466;
+}
+
+.volunteer-info {
+    padding: 10px;
+}
+
+.volunteer-info h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.volunteer-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.volunteer-prev,
+.volunteer-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: #F9B466;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px #000;
+    border-radius: 0;
+}
+
+.volunteer-next {
+    right: -50px;
+}
+
+.volunteer-prev {
+    left: -50px;
+}
+
+.volunteer-prev:hover,
+.volunteer-next:hover {
+    background: rgba(249, 180, 102, 0.2);
+}
+
+/* Make the volunteer section responsive */
+@media (max-width: 768px) {
+    .volunteer-slideshow-container {
+        max-width: 90%;
+    }
+
+    .volunteer-prev,
+    .volunteer-next {
+        position: relative;
+        display: inline-block;
+        left: auto;
+        right: auto;
+        margin: 10px;
+        transform: none;
+    }
+}
+
+/* BLOG POST */
+
+.news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.post-card {
+    border: 2px dotted #000;
+    background: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-meta {
+    color: #666;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.post-summary {
+    flex-grow: 1;
+    margin: 10px 0;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.tag {
+    background: #F9B466;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.primary-button,
+.secondary-button,
+.read-more-button,
+.delete-button {
+    padding: 8px 16px;
+    border: 2px dotted #000;
+    background: #F9B466;
+    cursor: pointer;
+    font-family: "Courier New", Courier, monospace;
+    margin: 5px;
+}
+
+.secondary-button {
+    background: white;
+}
+
+.delete-button {
+    background: #ff9999;
+}
+
+.post-form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px dotted #000;
+    background: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.post-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* forms */
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.volunteer-intro,
+.support-intro {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.volunteer-options,
+.support-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.option-card {
+    border: 2px dotted #000;
+    padding: 20px;
+    background: white;
+}
+
+.option-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.option-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.option-card li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.option-card li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #F9B466;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px dotted #000;
+    background: white;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #F9B466;
+    border: 2px dotted #000;
+    cursor: pointer;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #f0a355;
+}
+
+@media (max-width: 768px) {
+
+    .volunteer-options,
+    .support-options {
+        grid-template-columns: 1fr;
+    }
+
+    .form-container {
+        margin: 20px;
+    }
+}
+
+
+/* CONTACT PAGE */
+
+.contact-intro {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    border: 2px dotted #000;
+    padding: 20px;
+    background: white;
+}
+
+.info-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    margin: 5px 0;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.radio-group label {
+    font-weight: normal;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        order: 2;
+    }
+
+    .contact-form-section {
+        order: 1;
+    }
+}
+
+/* Make sure form elements are consistent */
+#contactForm input[type="tel"],
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm select,
+#contactForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    font-family: "Courier New", Courier, monospace;
+}
+
+#contactForm textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Additional styles for about, clinic, and research pages */
+
+/* Common hero section styles */
+.about-hero,
+.clinic-hero,
+.research-hero {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    background-color: #f8f8f8;
+    border-bottom: 2px dotted #000;
+}
+
+/* Grid layouts */
+.about-grid,
+.services-grid,
+.project-grid,
+.team-grid,
+.partners-grid,
+.locations-grid,
+.collaboration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+/* Card styles */
+.about-card,
+.service-card,
+.project-card,
+.team-member {
+    border: 2px dotted #000;
+    padding: 20px;
+    background: white;
+}
+
+/* Team member specific styles */
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px dotted #F9B466;
+}
+
+/* Services section styles */
+.service-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.service-card li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.service-card li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #F9B466;
+}
+
+/* Research page specific styles */
+.publications-list {
+    border: 2px dotted #000;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.participation-info {
+    background: #f8f8f8;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px dotted #000;
+}
+
+/* Common section styles */
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+.learn-more {
+    padding: 8px 16px;
+    background-color: white;
+    border: 2px dotted #000;
+    cursor: pointer;
+    font-family: "Courier New", Courier, monospace;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .about-grid,
+    .services-grid,
+    .project-grid,
+    .team-grid,
+    .partners-grid,
+    .locations-grid,
+    .collaboration-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-section {
+        padding: 20px;
+    }
+}
+
+
+/* Mission Section */
+.mission-section {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.mission-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 2px dotted #000;
+    background: white;
+}
+
+/* Impact Statistics */
+.impact-section {
+    padding: 40px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 20px;
+    border: 2px dotted #000;
+    background: white;
+}
+
+.stat-number {
+    font-size: 2.5em;
+    color: #F9B466;
+    margin: 10px 0;
+}
+
+/* News Section */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.news-card {
+    border: 2px dotted #000;
+    background: white;
+    overflow: hidden;
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card h3 {
+    padding: 15px 15px 5px 15px;
+}
+
+.news-card p {
+    padding: 0 15px 15px 15px;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.view-all-news {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Call to Action Section */
+.cta-section {
+    padding: 40px 0;
+}
+
+.cta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.cta-card {
+    text-align: center;
+    padding: 30px;
+    border: 2px dotted #000;
+    background: white;
+}
+
+.cta-card h3 {
+    margin-bottom: 15px;
+}
+
+.cta-card p {
+    margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-grid,
+    .cta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-card {
+        margin: 20px;
+    }
+}
+
+/* Updated slideshow styles */
+.slideshow-container img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Make buttons more visible */
+.prev,
+.next {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+}
+
+.prev:hover,
+.next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
