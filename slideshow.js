@@ -65,6 +65,6 @@ function changeSlide(direction) {
 }
 
 window.onload = function () {
-    checkAuth(); // Add this line
-    showSlides(); // Your existing code
+    checkAuth(); 
+    showSlides(); 
 }
