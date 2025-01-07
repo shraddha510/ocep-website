@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="style.css">
     <script src="slideshow.js" defer></script>
     <script src="volunteerSlideshow.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -81,30 +84,24 @@
         <!-- Featured Volunteers -->
         <section id="top-volunteers" class="volunteers-section">
             <h2>Our Dedicated Volunteers</h2>
-            <div class="volunteer-slideshow-container">
-                <div class="volunteer-slide active">
-                    <img src="images/volunteer1.jpg" alt="Dr. Sarah Johnson">
-                    <div class="volunteer-info">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/volunteer1.jpg" alt="Dr. Sarah Johnson">
                         <h3>Dr. Sarah Johnson</h3>
                         <p>Ophthalmologist - 5 years of service</p>
                     </div>
-                </div>
-                <div class="volunteer-slide">
-                    <img src="images/volunteer2.jpg" alt="Dr. Michael Chen">
-                    <div class="volunteer-info">
+                    <div class="swiper-slide">
+                        <img src="images/volunteer2.jpg" alt="Dr. Michael Chen">
                         <h3>Dr. Michael Chen</h3>
                         <p>Optometrist - 3 years of service</p>
                     </div>
-                </div>
-                <div class="volunteer-slide">
-                    <img src="images/volunteer3.jpg" alt="Emily Rodriguez">
-                    <div class="volunteer-info">
+                    <div class="swiper-slide">
+                        <img src="images/volunteer3.jpg" alt="Emily Rodriguez">
                         <h3>Emily Rodriguez</h3>
                         <p>Clinic Coordinator - 4 years of service</p>
                     </div>
                 </div>
-                <button class="volunteer-prev" onclick="changeVolunteerSlide(-1)">&#10094;</button>
-                <button class="volunteer-next" onclick="changeVolunteerSlide(1)">&#10095;</button>
             </div>
         </section>
 
@@ -150,7 +147,23 @@
                 </div>
             </div>
         </section>
+
     </main>
+
+    <script>
+        const volunteerSwiper = new Swiper('#volunteers .swiper-container', {
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '#volunteers .swiper-button-next',
+                prevEl: '#volunteers .swiper-button-prev',
+            },
+        });
+
+    </script>
+
 </body>
 
 </html>
